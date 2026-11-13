@@ -1,13 +1,13 @@
-import { load, save } from "./storage.js";
-
-const saved = load();
+import { save, load } from "./storage.js";
 
 export const state = {
-  todos: saved.todos || [],
-  filter: saved.filter || "all",
-  cart: saved.cart || { items: [] },
+  todos: load("todos", []),
+  filter: load("filter", "all"),
+  cart: { items: load("cart", []) },
 };
 
 export function commit() {
-  save(state);
+  save("todos", state.todos);
+  save("filter", state.filter);
+  save("cart", state.cart.items);
 }
