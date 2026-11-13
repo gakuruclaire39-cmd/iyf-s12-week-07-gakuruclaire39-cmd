@@ -1,3 +1,2 @@
-import { loadTodos } from './storage.js';
-export let todos = loadTodos();
-export function setTodos(newTodos) { todos = newTodos; }
+export const saveTodos = (todos) => localStorage.setItem('todos', JSON.stringify(todos));
+export const loadTodos = () => JSON.parse(localStorage.getItem('todos') || '[]');
