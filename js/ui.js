@@ -1,23 +1,5 @@
-import { filterTodos, countTodos } from "./todo-logic.js";
-
-export function render(todos, filter, listEl, itemsLeftEl) {
-    const filtered = filterTodos(todos, filter);
-    const counts = countTodos(todos);
-
-    listEl.innerHTML = filtered
-        .map(
-            (t) => `
-        <li data-id="${t.id}" class="${t.completed ? "completed" : ""}">
-            <div class="todo-item">
-                <input type="checkbox" ${t.completed ? "checked" : ""} class="toggle">
-                <span class="todo-text">${t.text}</span>
-                <button class="delete">Delete</button>
-            </div>
-        </li>`
-        )
-        .join("");
-
-    if (itemsLeftEl) {
-        itemsLeftEl.textContent = `${counts.active} items left`;
-    }
+export function render(todos, container, onToggle, onDelete) {
+  container.innerHTML = todos.map(todo => `<li><input type="checkbox" ${todo.completed?'checked':''} data-id="${todo.id}" class="toggle"><span>${todo.text}</span><button data-id="${todo.id}" class="delete">Delete</button></li>`).join('');
+  container.querySelectorAll('.toggle').forEach(el=>el.addEventListener('change', e=>onToggle(Number(e.target.dataset.id))));
+  container.querySelectorAll('.delete').forEach(el=>el.addEventListener('click', e=>onDelete(Number(e.target.dataset.id))));
 }
