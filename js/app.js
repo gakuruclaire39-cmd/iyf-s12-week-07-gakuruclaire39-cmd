@@ -1,5 +1,5 @@
 import { state, commit } from "./state.js";
-import { addTodo, toggleTodo, deleteTodo, filterTodos, countTodos } from "./todo-logic.js";
+import { addTodo, toggleTodo, deleteTodo } from "./todo-logic.js";
 import { render } from "./ui.js";
 
 const input = document.getElementById("todo-input");
