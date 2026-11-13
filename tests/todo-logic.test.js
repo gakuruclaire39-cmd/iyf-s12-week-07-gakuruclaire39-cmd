@@ -1,4 +1,4 @@
-import { addTodo, deleteTodo, toggleTodo } from '../js/todoLogic.js';
+import { addTodo, deleteTodo, toggleTodo } from '../js/todo-Logic.js';
 
 describe('Todo Logic', () => {
   test('should add a new todo', () => {
