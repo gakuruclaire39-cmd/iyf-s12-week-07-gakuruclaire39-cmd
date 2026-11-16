@@ -1,22 +1,71 @@
-import { addTodo, deleteTodo, toggleTodo } from '../js/todo-Logic.js';
+import { describe, it, expect } from "vitest";
+import {
+    addTodo,
+    toggleTodo,
+    deleteTodo,
+    filterTodos,
+    countTodos,
+} from "../js/todo-logic.js";
 
-describe('Todo Logic', () => {
-  test('should add a new todo', () => {
-    const todos = [];
-    const newTodos = addTodo(todos, 'Learn ES Modules');
-    expect(newTodos.length).toBe(1);
-    expect(newTodos[0].text).toBe('Learn ES Modules');
-  });
+const sampleTodos = [
+    { id: 1, text: "Study JavaScript", completed: false },
+    { id: 2, text: "Complete assignment", completed: true },
+];
 
-  test('should delete a todo', () => {
-    const todos = [{ id: 1, text: 'Test' }];
-    const newTodos = deleteTodo(todos, 1);
-    expect(newTodos.length).toBe(0);
-  });
+describe("Todo Logic", () => {
+    it("adds a new todo", () => {
+        const result = addTodo(sampleTodos, "Read a book");
 
-  test('should toggle a todo', () => {
-    const todos = [{ id: 1, text: 'Test', completed: false }];
-    const newTodos = toggleTodo(todos, 1);
-    expect(newTodos[0].completed).toBe(true);
-  });
+        expect(result).toHaveLength(3);
+        expect(result[2].text).toBe("Read a book");
+    });
+
+    it("does not add empty text", () => {
+        expect(addTodo(sampleTodos, "   ")).toEqual(sampleTodos);
+    });
+
+    it("toggles a todo", () => {
+        const result = toggleTodo(sampleTodos, 1);
+
+        expect(result[0].completed).toBe(true);
+    });
+
+    it("does not change the original array", () => {
+        const original = [...sampleTodos];
+
+        toggleTodo(sampleTodos, 1);
+
+        expect(sampleTodos).toEqual(original);
+    });
+
+    it("deletes a todo", () => {
+        const result = deleteTodo(sampleTodos, 1);
+
+        expect(result).toHaveLength(1);
+        expect(result[0].id).toBe(2);
+    });
+
+    it("filters active todos", () => {
+        expect(filterTodos(sampleTodos, "active")).toHaveLength(1);
+    });
+
+    it("filters completed todos", () => {
+        expect(filterTodos(sampleTodos, "completed")).toHaveLength(1);
+    });
+
+    it("counts todos correctly", () => {
+        expect(countTodos(sampleTodos)).toEqual({
+            total: 2,
+            active: 1,
+            completed: 1,
+        });
+    });
+
+    it("handles an empty list", () => {
+        expect(countTodos([])).toEqual({
+            total: 0,
+            active: 0,
+            completed: 0,
+        });
+    });
 });
