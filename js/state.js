@@ -1,3 +1,7 @@
-import { loadTodos } from './storage.js';
+import { loadTodos } from "./storage.js";
+
 export let todos = loadTodos();
-export function setTodos(newTodos) { todos = newTodos; }
+
+export function setTodos(newTodos) {
+    todos = newTodos;
+}
