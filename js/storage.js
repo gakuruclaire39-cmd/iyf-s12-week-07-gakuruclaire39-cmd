@@ -1,10 +1,7 @@
 const STORAGE_KEY = "todos";
+const FILTER_KEY = "todoFilter";
 
 export const saveTodos = (todos) => {
-    if (todos === undefined) {
-        return;
-    }
-
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
     } catch (error) {
@@ -27,4 +24,18 @@ export const loadTodos = () => {
         console.error("Unable to load todos:", error);
         return [];
     }
+};
+
+export const saveFilter = (filter) => {
+    localStorage.setItem(FILTER_KEY, filter);
+};
+
+export const loadFilter = () => {
+    const savedFilter = localStorage.getItem(FILTER_KEY);
+
+    if (["all", "active", "completed"].includes(savedFilter)) {
+        return savedFilter;
+    }
+
+    return "all";
 };
