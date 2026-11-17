@@ -93,3 +93,5 @@ My Codespaces were full so I finished the merge on GitHub web. I also struggled 
 
 ## Live Demo
 [Live Link](https://gakuruclaire39-cmd.github.io/iyf-s12-week-07-gakuruclaire39-cmd/)
+
+I added .github/workflows/ci.yml in order to run my npm since codespaces were full and I'm using my phone.
