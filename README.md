@@ -50,7 +50,7 @@ My Codespaces were full so I finished the merge on GitHub web. I also struggled 
 - **Shared repo:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd
 - **PR I opened:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd/pull/1
 - **PR I reviewed:** https://github.com/gracewambui0432/iyf-s12-week-07-gracewambui0432/pull/1
-- **Review I wrote:** https://github.com/gracewambui0432/iyf-s12-week-07-gracewambui0432/pull/1changes#r4589991717
+- **Review I wrote:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd/pull/1changes#r4589991717
 - **Merge conflict resolved:** Not needed in Week 7
 
 ## Live Demo
