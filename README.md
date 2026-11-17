@@ -16,6 +16,44 @@ For this week I took my Week 5 to-do app and rebuilt it using better practices. 
 - Node 22
 - Git / GitHub PR workflow
 
+## Repository Structure
+
+```text
+iyf-s12-week-07-gakuruclaire39-cmd/
+│
+├── index.html
+├── styles.css
+│
+├── js/
+│   ├── app.js
+│   ├── state.js
+│   ├── storage.js
+│   ├── todo-logic.js
+│   └── ui.js
+│
+├── tests/
+│   └── todo-logic.test.js
+│
+├── cart/
+│   ├── index.html
+│   └── cart.js
+│
+├── daily-challenges/
+│   ├── day-1-theme/
+│   ├── day-2-search/
+│   ├── day-3-form/
+│   ├── day-4-refactor/
+│   └── day-5-review.md
+│
+├── eslint.config.js
+├── .prettierrc
+├── .gitignore
+├── package.json
+├── package-lock.json
+│
+└── README.md
+```
+
 ## Features
 **Main To-Do App:**
 - Saves todos and keeps them after reload
@@ -49,8 +87,8 @@ My Codespaces were full so I finished the merge on GitHub web. I also struggled 
 - **Team / partner:** [@gracewambui0432](https://github.com/gracewambui0432)
 - **Shared repo:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd
 - **PR I opened:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd/pull/1
-- **PR I reviewed:** https://github.com/gracewambui0432/iyf-s12-week-07-gracewambui0432/pull/1
-- **Review I wrote:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd/pull/1changes#r4589991717
+- **PR I reviewed:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd/pull/1
+- **Review I wrote:** https://github.com/gakuruclaire39-cmd/iyf-s12-week-07-gakuruclaire39-cmd/pull/1/changes#r4589797724
 - **Merge conflict resolved:** Not needed in Week 7
 
 ## Live Demo
