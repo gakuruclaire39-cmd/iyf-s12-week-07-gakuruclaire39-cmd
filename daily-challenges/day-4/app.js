@@ -3,7 +3,8 @@ const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 const errorMessage = document.getElementById("errorMessage");
 
-const tasks = [...]
+const tasks = [];
+
 function showError(message) {
     errorMessage.textContent = message;
 }
