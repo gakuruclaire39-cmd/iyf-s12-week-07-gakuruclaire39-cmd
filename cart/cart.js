@@ -4,20 +4,24 @@ const state = {
             id: 1,
             name: "Mandazi (pack of 6)",
             price: 120,
-            images:"Mandazi.jpg"
+            image: "..images/Mandazi.jpg"
         },
         {
             id: 2,
             name: "Chapati (pack of 5)",
             price: 150,
-             images:"Chapati.jpg"
+            image: "..images/Chapati.jpg"
         },
         {
             id: 3,
             name: "Tea leaves 250g",
             price: 180,
-            images:"Tea-leaves.jpg"
+            image: "..images/Tea-leaves.jpg"
         },
+    ],
+    cart: [],
+    history: [],
+};
     ],
     cart: [],
     history: [],
